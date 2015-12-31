@@ -15,15 +15,24 @@ init_stock_lookup = function() {
     init_stock_lookup();
   });
   
-  $('#stock-lookup-form').on('ajax:error', function(event, xhr, status, error) {
+  $('#stock-lookup-form').on('ajax:error', function(event, xhr, status, error){
     hide_spinner();  
     $('#stock-lookup-results').replaceWith(' ');
-    $('#stock-lookup-errors').replaceWith('Stock was not found');
+    $('#stock-lookup-errors').replaceWith('Stock was not found.');
   }); 
-}
+};
 
 
 
 $(document).ready(function(){
   init_stock_lookup();    
-})
+});
+
+
+var hide_spinner = function(){
+  $('#spinner').hide();    
+};
+
+var show_spinner = function(){
+  $('#spinner').show();    
+};
